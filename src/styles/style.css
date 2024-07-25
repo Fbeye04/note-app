@@ -1,0 +1,60 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #F5F7FA;
+    margin: 0;
+    padding: 10px;
+    color: #333333;
+}
+
+/* Tambahkan di file CSS global atau dalam style block yang sesuai */
+#notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Optional: Menambahkan styling pada note-card jika diperlukan */
+note-card {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+}
+
+.app-container {
+    transition: filter 0.3s ease;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-container.blurred {
+    filter: blur(5px);
+}
+
+note-form.show {
+    display: block;
+}
+
+/* Media query untuk lebar layar maksimum 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
+    #notesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+/* Media query untuk lebar layar maksimum 480px */
+@media (max-width: 480px) {
+    #notesGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+}
